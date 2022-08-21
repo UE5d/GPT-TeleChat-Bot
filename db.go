@@ -5,4 +5,8 @@ import (
 
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
-	"gorm.io/gor
+	"gorm.io/gorm/logger"
+)
+
+var (
+	dbFile = "cha
