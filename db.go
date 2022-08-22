@@ -16,4 +16,4 @@ var (
 type Message struct {
 	gorm.Model
 	ID      uint   `gorm:"primaryKey" json:"id"`
-	ChatID  string `
+	ChatID  string `json:"chatId,omitempty
