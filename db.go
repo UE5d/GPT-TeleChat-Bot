@@ -13,4 +13,5 @@ var (
 	DB     *gorm.DB
 )
 
-ty
+type Message struct {
+	gorm.Mo
