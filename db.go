@@ -9,4 +9,8 @@ import (
 )
 
 var (
-	dbFile = "cha
+	dbFile = "chats.db"
+	DB     *gorm.DB
+)
+
+ty
