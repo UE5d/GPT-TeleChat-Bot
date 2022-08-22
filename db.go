@@ -14,4 +14,5 @@ var (
 )
 
 type Message struct {
-	gorm.Mo
+	gorm.Model
+	ID      uint  
