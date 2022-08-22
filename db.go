@@ -17,4 +17,4 @@ type Message struct {
 	gorm.Model
 	ID      uint   `gorm:"primaryKey" json:"id"`
 	ChatID  string `json:"chatId,omitempty"`  // telegrams conversation id
-	Role    strin
+	Role    string `json:"role,omitempty"` 
