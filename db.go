@@ -18,4 +18,4 @@ type Message struct {
 	ID      uint   `gorm:"primaryKey" json:"id"`
 	ChatID  string `json:"chatId,omitempty"`  // telegrams conversation id
 	Role    string `json:"role,omitempty"`    // chatgpt role
-	Content s
+	Content string `json:"content,omi
