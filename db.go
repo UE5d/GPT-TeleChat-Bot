@@ -22,4 +22,4 @@ type Message struct {
 
 	PromptTokens     int `json:"prompt_tokens,omitempty"`
 	CompletionTokens int `json:"completion_tokens,omitempty"`
-	TotalTo
+	TotalTokens      int `json:
