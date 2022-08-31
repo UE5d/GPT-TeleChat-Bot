@@ -20,4 +20,4 @@ type Message struct {
 	Role    string `json:"role,omitempty"`    // chatgpt role
 	Content string `json:"content,omitempty"` // message content
 
-	PromptToken
+	PromptTokens     int `json:"
