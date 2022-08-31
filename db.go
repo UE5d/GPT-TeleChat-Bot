@@ -21,4 +21,4 @@ type Message struct {
 	Content string `json:"content,omitempty"` // message content
 
 	PromptTokens     int `json:"prompt_tokens,omitempty"`
-	Co
+	CompletionTokens int `json:"c
