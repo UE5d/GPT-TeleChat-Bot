@@ -27,4 +27,4 @@ type Message struct {
 
 // ConnectDB
 func ConnectDB() error {
-	
+	db, err := gorm.Open(s
