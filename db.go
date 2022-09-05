@@ -26,4 +26,5 @@ type Message struct {
 }
 
 // ConnectDB
-func
+func ConnectDB() error {
+	
