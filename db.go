@@ -30,4 +30,5 @@ func ConnectDB() error {
 	db, err := gorm.Open(sqlite.Open(dbFile), &gorm.Config{
 		Logger: logger.Default,
 	})
-	if er
+	if err != nil {
+		panic("failed t
