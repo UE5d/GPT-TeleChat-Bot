@@ -28,4 +28,6 @@ type Message struct {
 // ConnectDB
 func ConnectDB() error {
 	db, err := gorm.Open(sqlite.Open(dbFile), &gorm.Config{
-		Logger: lo
+		Logger: logger.Default,
+	})
+	if er
