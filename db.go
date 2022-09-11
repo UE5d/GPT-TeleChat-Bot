@@ -41,4 +41,4 @@ func ConnectDB() error {
 	return nil
 }
 
-// FindMessages finds the prevous users conversations from the tele
+// FindMessages finds the prevous users conversations from the telegrams conversation id
