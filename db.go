@@ -39,3 +39,6 @@ func ConnectDB() error {
 	DB = db
 	log.Debug().Msg("database migrated")
 	return nil
+}
+
+// FindMessages fin
