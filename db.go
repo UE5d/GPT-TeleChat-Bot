@@ -41,4 +41,4 @@ func ConnectDB() error {
 	return nil
 }
 
-// FindMessages fin
+// FindMessages finds the prevous users conv
