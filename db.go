@@ -34,3 +34,4 @@ func ConnectDB() error {
 		panic("failed to connect database")
 	}
 
+	db.AutoMigrate(&Mess
