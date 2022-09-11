@@ -31,4 +31,6 @@ func ConnectDB() error {
 		Logger: logger.Default,
 	})
 	if err != nil {
-		panic("failed t
+		panic("failed to connect database")
+	}
+
