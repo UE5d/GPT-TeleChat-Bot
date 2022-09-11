@@ -37,4 +37,5 @@ func ConnectDB() error {
 	db.AutoMigrate(&Message{})
 
 	DB = db
-	log.Debug().Msg("database migra
+	log.Debug().Msg("database migrated")
+	return nil
