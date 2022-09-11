@@ -34,4 +34,7 @@ func ConnectDB() error {
 		panic("failed to connect database")
 	}
 
-	db.AutoMigrate(&Mess
+	db.AutoMigrate(&Message{})
+
+	DB = db
+	log.Deb
