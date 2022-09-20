@@ -46,4 +46,5 @@ func FindMessages(chatId string) ([]Message, error) {
 	var messages []Message
 
 	err := DB.Where(&Message{
-		Cha
+		ChatID: chatId,
+	}).F
