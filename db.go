@@ -43,4 +43,6 @@ func ConnectDB() error {
 
 // FindMessages finds the prevous users conversations from the telegrams conversation id
 func FindMessages(chatId string) ([]Message, error) {
-	var
+	var messages []Message
+
+	err := DB
