@@ -45,4 +45,5 @@ func ConnectDB() error {
 func FindMessages(chatId string) ([]Message, error) {
 	var messages []Message
 
-	err := DB
+	err := DB.Where(&Message{
+		Cha
