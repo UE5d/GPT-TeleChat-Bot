@@ -49,4 +49,7 @@ func FindMessages(chatId string) ([]Message, error) {
 		ChatID: chatId,
 	}).Find(&messages).Error
 
-	if err 
+	if err != nil {
+		return nil, err
+	}
+	
