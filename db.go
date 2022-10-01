@@ -55,4 +55,5 @@ func FindMessages(chatId string) ([]Message, error) {
 	return messages, nil
 }
 
-// CreateMessage creates a new
+// CreateMessage creates a new chat
+func CreateMes
