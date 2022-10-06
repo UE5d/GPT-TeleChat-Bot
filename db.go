@@ -56,4 +56,5 @@ func FindMessages(chatId string) ([]Message, error) {
 }
 
 // CreateMessage creates a new chat
-func CreateMessage(msg Message) 
+func CreateMessage(msg Message) (*Message, error) {
+	if err :
