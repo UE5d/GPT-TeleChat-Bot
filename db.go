@@ -60,4 +60,5 @@ func CreateMessage(msg Message) (*Message, error) {
 	if err := DB.Create(&msg).Error; err != nil {
 		return nil, err
 	}
-	return &msg, ni
+	return &msg, nil
+}
