@@ -22,4 +22,4 @@ github.com/mattn/go-sqlite3 v1.14.16/go.mod h1:2eHXhiwb8IkHr+BDWZGa96P6+rkvnG63S
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/rakyll/openai-go v1.0.1 h1:UVxz7cRFiavIK+HOFkfBv/LWp9iqxj0QE6NnsSHvl0M=
 github.com/rakyll/openai-go v1.0.1/go.mod h1:hQpeaAVYbRXtWjFUew82LmbEIASmjihU3aI5NfJdqxA=
-github.com/rs/xid v1.4.0/go.mod h1:trr
+github.com/rs/xid v1.4.0/go.mod h1:trrq9SKmegXys3aeAKXMUTdJsYX
