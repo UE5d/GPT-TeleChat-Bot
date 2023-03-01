@@ -23,4 +23,4 @@ github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINE
 github.com/rakyll/openai-go v1.0.1 h1:UVxz7cRFiavIK+HOFkfBv/LWp9iqxj0QE6NnsSHvl0M=
 github.com/rakyll/openai-go v1.0.1/go.mod h1:hQpeaAVYbRXtWjFUew82LmbEIASmjihU3aI5NfJdqxA=
 github.com/rs/xid v1.4.0/go.mod h1:trrq9SKmegXys3aeAKXMUTdJsYXVwGY3RLcfgqegfbg=
-github.com/rs/zerolog
+github.com/rs/zerolog v1.29.0 h1:Zes4hju04hjb
