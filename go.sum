@@ -25,4 +25,4 @@ github.com/rakyll/openai-go v1.0.1/go.mod h1:hQpeaAVYbRXtWjFUew82LmbEIASmjihU3aI
 github.com/rs/xid v1.4.0/go.mod h1:trrq9SKmegXys3aeAKXMUTdJsYXVwGY3RLcfgqegfbg=
 github.com/rs/zerolog v1.29.0 h1:Zes4hju04hjbvkVkOhdl2HpZa+0PmVwigmo8XoORE5w=
 github.com/rs/zerolog v1.29.0/go.mod h1:NILgTygv/Uej1ra5XxGf82ZFSLk58MFGAUS2o6usyD0=
-g
+golang.org/x/sys v0.
