@@ -24,3 +24,25 @@ var (
 )
 
 func main() {
+	// setup logger
+	log.Logger = log.With().Caller().Logger()
+	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
+
+	// Environment files
+	err := godotenv.Load()
+	if err != nil {
+		log.Debug().Msg(err.Error())
+	}
+
+	retainHistory = os.Getenv("RETAIN_HISTORY") == "true"
+
+	if err := ConnectDB(); err != nil {
+		log.Fatal().Msg(err.Error())
+	}
+
+	// start server
+	StartServer()
+}
+
+// StartServer starts the telegram server
+func StartServer() {
