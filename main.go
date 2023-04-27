@@ -46,3 +46,18 @@ func main() {
 
 // StartServer starts the telegram server
 func StartServer() {
+	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
+	defer cancel()
+
+	opts := []bot.Option{
+		bot.WithDefaultHandler(handler),
+	}
+
+	b, err := bot.New(os.Getenv("TELEGRAM_API_KEY"), opts...)
+	if err != nil {
+		panic(err)
+	}
+
+	log.Debug().Msg("Telegram bot started!")
+	b.Start(ctx)
+}
