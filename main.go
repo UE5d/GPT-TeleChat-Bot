@@ -85,3 +85,29 @@ func SendToChatGPT(chatId, textMsg string) []*chat.Choice {
 	if len(prevMessages) == 0 {
 		// create & add the systems prompt first
 		log.Debug().Msg("added system prompt because its a first time user")
+		gptMsgs = append(gptMsgs, &chat.Message{
+			Role:    "user", // "system"
+			Content: string(prmptB),
+		})
+
+	} else {
+		// if we're retaining history
+		if retainHistory {
+			// add the whole previous users conversation + current text message and send to chatgpt
+			// this may include the previous prompt from the conversation
+			for _, prevMsg := range prevMessages {
+				gptMsgs = append(gptMsgs, &chat.Message{
+					Role:    prevMsg.Role,
+					Content: prevMsg.Content,
+				})
+			}
+		} else {
+			// add only the system prompt to gpt
+			gptMsgs = append(gptMsgs, &chat.Message{
+				Role:    "user", // "system"
+				Content: string(prmptB),
+			})
+		}
+	}
+
+	// add this current message
