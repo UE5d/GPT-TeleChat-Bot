@@ -111,3 +111,27 @@ func SendToChatGPT(chatId, textMsg string) []*chat.Choice {
 	}
 
 	// add this current message
+	gptMsgs = append(gptMsgs, &chat.Message{
+		Role:    "user",
+		Content: textMsg,
+	})
+
+	// process request
+	client := chat.NewClient(s, "gpt-3.5-turbo-0301")
+	resp, err := client.CreateCompletion(ctx, &chat.CreateCompletionParams{
+		Messages: gptMsgs,
+	})
+	if err != nil {
+		log.Error().Msgf("Failed to complete: %v", err)
+		return nil
+	}
+
+	// save the new prompt + current text to DB
+	if len(prevMessages) == 0 {
+		for _, gptMsg := range gptMsgs {
+			_, err := CreateMessage(Message{
+				ChatID:  chatId,
+				Content: gptMsg.Content,
+				Role:    gptMsg.Role,
+
+				// metrics for this single chat session
