@@ -154,3 +154,19 @@ func SendToChatGPT(chatId, textMsg string) []*chat.Choice {
 			PromptTokens:     resp.Usage.PromptTokens,
 			CompletionTokens: resp.Usage.CompletionTokens,
 			TotalTokens:      resp.Usage.TotalTokens,
+		})
+		if err != nil {
+			log.Error().Msgf("unable to current message: %v", err)
+		}
+	}
+
+	// save these reply responses
+	for _, choice := range resp.Choices {
+		_, err := CreateMessage(Message{
+			ChatID:  chatId,
+			Role:    choice.Message.Role,
+			Content: choice.Message.Content,
+
+			// metrics for this single chat session
+			PromptTokens:     resp.Usage.PromptTokens,
+			CompletionTokens: resp.Usage.CompletionTokens,
