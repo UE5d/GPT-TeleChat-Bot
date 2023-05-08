@@ -170,3 +170,32 @@ func SendToChatGPT(chatId, textMsg string) []*chat.Choice {
 			// metrics for this single chat session
 			PromptTokens:     resp.Usage.PromptTokens,
 			CompletionTokens: resp.Usage.CompletionTokens,
+			TotalTokens:      resp.Usage.TotalTokens,
+		})
+		if err != nil {
+			log.Error().Msgf("unable save chat response: %v", err)
+		}
+	}
+
+	log.Info().
+		Int("TotalTokens", resp.Usage.TotalTokens).
+		Int("CompletionTokens", resp.Usage.CompletionTokens).
+		Int("PromptTokens", resp.Usage.PromptTokens).
+		Msg("usage")
+
+	return resp.Choices
+}
+
+// handler
+func handler(ctx context.Context, b *bot.Bot, update *models.Update) {
+	// Initialize random seed
+	rand.Seed(time.Now().UnixNano())
+
+	outgoingMsg := update.Message.Text
+	chatId := update.Message.Chat.ID
+	log.Debug().Msg(outgoingMsg)
+
+	// convert number to string
+	chatIdStr := strconv.Itoa(int(chatId))
+	chatResp := SendToChatGPT(chatIdStr, outgoingMsg)
+	if chatResp == nil {
