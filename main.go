@@ -199,3 +199,24 @@ func handler(ctx context.Context, b *bot.Bot, update *models.Update) {
 	chatIdStr := strconv.Itoa(int(chatId))
 	chatResp := SendToChatGPT(chatIdStr, outgoingMsg)
 	if chatResp == nil {
+
+		// Define an array of responses
+		responses := []string{
+			"Sorry, there seems to be a temporary issue. I'll keep trying and let you know as soon as it's back online.",
+			"Hmmm, something's not quite right. I'm on the case and will update you when it's working again.",
+			"Looks like I'm having a bit of a moment. I'm keeping an eye on it and will let you know when it's back up.",
+			"Whoops, I seem to be down at the moment. I'll do my best to reconnect and keep you posted.",
+			"That's bad, I can't seem to reach the destination endpoint. But I'll get back to you when I'm online.",
+			"Oh no, I'm down. I'll keep trying and notify you when I'm back online.",
+		}
+		randIndex := rand.Intn(len(responses))
+
+		b.SendMessage(ctx, &bot.SendMessageParams{
+			ChatID: chatId,
+			Text:   responses[randIndex],
+		})
+		return
+	}
+
+	for _, choice := range chatResp {
+		incomingMsg := choice.Message
