@@ -1,1 +1,1 @@
-# GPT-TeleChat-Bot: A Telegram Bot with ChatGPT and 
+# GPT-TeleChat-Bot: A Telegram Bot with ChatGPT and Golang\n\nThis i
