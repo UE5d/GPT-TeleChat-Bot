@@ -1,1 +1,1 @@
-# GPT-TeleChat-Bot: A Telegram Bot with ChatGPT and Golang\n\nThis is a Telegram bot integrating ChatGPT and Golang. It leverages OpenAI's GPT-3 language model for real-time responses to user messages.\n\n## Prerequisites\nFor building and running this app
+# GPT-TeleChat-Bot: A Telegram Bot with ChatGPT and Golang\n\nThis is a Telegram bot integrating ChatGPT and Golang. It leverages OpenAI's GPT-3 language model for real-time responses to user messages.\n\n## Prerequisites\nFor building and running this application, ensure Go is
